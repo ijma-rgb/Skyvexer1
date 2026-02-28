@@ -1484,7 +1484,7 @@
     @media (max-width: 768px), (max-height: 500px), (pointer: coarse) {
       /* 하단 HUD — 버튼·조이스틱 위에 확실히 */
       #hud-bottom {
-        bottom: 62px;
+        bottom: 72px;
         left: 50%;
         transform: translateX(-50%);
         padding: 8px 14px;
@@ -1498,35 +1498,34 @@
 
       #inventory-hud { display: none !important; }
 
-      /* 퀘스트 패널 — 조이스틱과 겹치지 않게 우측 상단으로 */
+      /* 퀘스트 패널 — 숫자/최고기록 아래에 두고 겹침 방지 */
       #quest-panel {
         left: auto;
-        right: 12px;
-        top: 100px;
+        right: 10px;
+        top: 135px;
         bottom: auto;
-        width: 150px;
-        max-height: 180px;
+        width: 140px;
+        max-height: 160px;
       }
 
       #ammo-hud {
         bottom: auto;
-        top: 85px;
-        right: 10px;
-        padding: 8px 12px;
+        top: 82px;
+        right: 8px;
+        padding: 6px 10px;
       }
-      #ammo-hud #ammo-display { font-size: 22px; }
+      #ammo-hud #ammo-display { font-size: 20px; }
 
-      #boss-hud { top: 80px; width: 92vw; }
+      #boss-hud { top: 75px; width: 92vw; }
       #boss-hud #boss-name { font-size: 20px; }
 
-      #fall-hud { top: 85px; right: 10px; padding: 6px 8px; }
-      #fall-hud #fall-speed { font-size: 20px; }
+      #fall-hud { top: 128px; right: 8px; padding: 6px 8px; }
+      #fall-hud #fall-speed { font-size: 18px; }
 
       #height-display { font-size: clamp(64px, 8vh, 90px); left: calc(50% + 22px); top: min(6px, 1vh); }
       #height-display span { font-size: clamp(36px, 4.4vh, 50px); }
-      #best-display { margin-top: min(80px, 9.5vh); }
-      #best-display { margin-top: 34px; font-size: 11px; padding: 4px 12px; }
-      #status-display { font-size: 10px; padding: 3px 12px; }
+      #best-display { margin-top: min(108px, 12.5vh); font-size: 11px; padding: 4px 12px; }
+      #status-display { font-size: 10px; padding: 3px 12px; margin-top: 6px; }
 
       #overlay { padding: max(12px, env(safe-area-inset-top)) 10px max(20px, env(safe-area-inset-bottom)); gap: 8px; justify-content: flex-start; min-height: 0; }
       .ov-hero { padding: 12px 16px; margin-bottom: 12px; flex-shrink: 0; }
@@ -1542,7 +1541,7 @@
       .shop-grid { grid-template-columns: 1fr; gap: 8px; }
 
       /* 모바일 컨트롤 — 조금 오른쪽, 더 크게 */
-      #joystick-area { width: 132px; height: 132px; bottom: max(18px, env(safe-area-inset-bottom)); left: max(28px, env(safe-area-inset-left) + 12px); }
+      #joystick-area { width: 132px; height: 132px; bottom: max(18px, env(samrlfhra-inset-bottom)); left: max(28px, env(safe-area-inset-left) + 12px); }
       #right-buttons { bottom: max(18px, env(safe-area-inset-bottom)); right: max(10px, env(safe-area-inset-right)); gap: 6px; }
       #right-buttons-row1, #right-buttons-row2 { gap: 6px; }
       #btn-jump { width: 56px; height: 56px; font-size: 18px; }
@@ -1551,21 +1550,21 @@
       #btn-block { width: 46px; height: 46px; font-size: 16px; }
       #btn-inv1, #btn-inv2, #btn-inv3 { width: 40px; height: 40px; font-size: 11px; }
 
-      /* 알림·달성·위험 안내 UI — 모바일에서 작게, 시야 덜 가리게 */
-      #quest-banner { top: 140px; padding: 0 8px; }
+      /* 알림·달성·위험 안내 UI — 모바일에서 작게, 서로 안 겹치게 */
+      #quest-banner { top: 155px; padding: 0 8px; }
       #quest-banner-inner { padding: 6px 16px; font-size: 11px; border-radius: 50px; max-width: 85vw; }
-      #milestone-popup { bottom: auto; top: 100px; right: 8px; left: auto; max-width: 72vw; padding: 10px 14px; transform: scale(0.8) translateY(-10px); }
+      #milestone-popup { bottom: auto; top: 115px; right: 8px; left: auto; max-width: 72vw; padding: 10px 14px; transform: scale(0.8) translateY(-10px); }
       #milestone-popup.show { transform: scale(0.8) translateY(0); }
       #milestone-popup.hide { transform: scale(0.7) translateY(10px); }
       #ms-title { font-size: 16px; }
       #ms-desc { font-size: 11px; margin-top: 3px; line-height: 1.4; }
       #ms-reward { font-size: 11px; margin-top: 4px; }
-      #quest-panel { width: 120px; max-height: 140px; top: 88px; right: 8px; gap: 4px; }
+      #quest-panel { width: 120px; max-height: 140px; top: 135px; right: 8px; gap: 4px; }
       #quest-panel .quest-card { padding: 6px 10px; border-radius: 10px; }
       #quest-panel .quest-title { font-size: 10px; margin-bottom: 2px; }
       #quest-panel .quest-bar-bg { height: 4px; margin: 3px 0; }
       #quest-panel .quest-done-text, #quest-panel .quest-reward { font-size: 9px; }
-      #combo-display { font-size: clamp(18px, 4vw, 28px) !important; top: 160px !important; }
+      #combo-display { font-size: clamp(18px, 4vw, 28px) !important; top: 175px !important; }
       #tutorial-box { width: min(380px, 90vw); padding: 20px 18px 18px; border-radius: 18px; }
       #tut-icon { font-size: 36px; margin-bottom: 10px; }
       #tut-title { font-size: 18px; margin-bottom: 6px; }
