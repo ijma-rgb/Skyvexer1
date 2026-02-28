@@ -1,0 +1,39 @@
+========================================
+  Netlify 같은 사이트 업데이트 방법
+========================================
+
+[방법 1] 웹에서 드래그로 업데이트
+--------------------------------
+1. https://app.netlify.com 로그인
+2. Sites 목록에서 "내 게임 사이트" 클릭
+3. 위쪽 탭에서 "Deploys" 클릭
+4. 페이지를 맨 아래까지 쭉 내리기 (스크롤 끝까지)
+5. "Need to update your site? Drag and drop your site output folder here"
+   또는 점선으로 된 빈 칸이 보이면
+   → 그곳에 mygame 폴더 통째로 드래그해서 놓기
+6. 배포 끝나면 같은 주소로 새 버전 적용됨
+
+※ 드래그 칸이 안 보이면:
+   - "Production" / "Branch deploys" 아래로 더 내려보기
+   - 또는 오른쪽 위 "Trigger deploy" 버튼이 있으면 눌러보기
+     (일부는 "Deploy site" 메뉴로 ZIP 업로드 가능)
+
+[방법 2] Node 설치 후 CLI로 (한번 셋팅하면 계속 편함)
+--------------------------------
+1. https://nodejs.org 에서 LTS 버전 설치 (설치 후 터미널 다시 열기)
+2. PowerShell 또는 명령 프롬프트에서:
+
+   cd "c:\Users\2wnqj\Downloads\mygame"
+   npm install -g netlify-cli
+   netlify login
+
+3. 로그인 끝나면:
+   netlify link
+   → 목록에서 지금 쓰는 사이트 선택
+
+4. 이제부터 업데이트할 때마다:
+   netlify deploy --prod
+
+   (같은 사이트, 같은 주소로만 갱신됨)
+
+========================================

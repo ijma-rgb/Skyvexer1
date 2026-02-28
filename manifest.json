@@ -1,0 +1,10 @@
+{
+  "name": "SKYVEXER IGNITION",
+  "short_name": "SKYVEXER",
+  "description": "하늘의 끝, 그 너머로. 한계는 없다.",
+  "start_url": "/game_fixed.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "any"
+}

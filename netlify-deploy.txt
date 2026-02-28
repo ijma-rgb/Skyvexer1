@@ -1,0 +1,20 @@
+=== Netlify 업데이트 (CLI) ===
+
+1. 터미널/PowerShell을 열고 mygame 폴더로 이동:
+   cd "c:\Users\2wnqj\Downloads\mygame"
+
+2. Netlify CLI 설치 (한 번만):
+   npm install -g netlify-cli
+
+3. 로그인 (한 번만, 브라우저 열림):
+   netlify login
+
+4. 이 폴더를 기존 사이트에 연결 (한 번만):
+   netlify link
+   → "Use current directory?" Yes
+   → 사이트 목록에서 방금 만든 사이트 선택
+
+5. 이후 업데이트할 때마다:
+   netlify deploy --prod
+
+   끝나면 같은 주소로 새 버전이 올라갑니다.
