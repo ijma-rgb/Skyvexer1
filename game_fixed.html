@@ -1540,9 +1540,9 @@
       #shop-title { font-size: 20px; }
       .shop-grid { grid-template-columns: 1fr; gap: 8px; }
 
-      /* 모바일 컨트롤 — 조이스틱만 살짝 위로, 오른쪽 버튼은 하단 유지 */
-      #joystick-area { width: 132px; height: 132px; bottom: max(72px, calc(env(safe-area-inset-bottom) + 50px)); left: max(28px, env(safe-area-inset-left) + 12px); }
-      #right-buttons { bottom: max(48px, calc(env(safe-area-inset-bottom) + 30px)); right: max(10px, env(safe-area-inset-right)); gap: 8px; }
+      /* 모바일 컨트롤 — 조이스틱 하단에 가깝게 */
+      #joystick-area { width: 132px; height: 132px; bottom: max(24px, env(safe-area-inset-bottom)) !important; left: max(28px, env(safe-area-inset-left) + 12px); }
+      #right-buttons { bottom: max(48px, calc(env(safe-area-inset-bottom) + 30px)) !important; right: max(10px, env(safe-area-inset-right)); gap: 8px; }
       #right-buttons-row1, #right-buttons-row2 { gap: 8px; }
       #btn-jump { width: 72px; height: 72px; font-size: 20px; }
       #btn-dash { width: 46px; height: 46px; font-size: 15px; }
