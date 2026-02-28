@@ -1381,7 +1381,7 @@
 
     /* 조이스틱 (좌측) — 터치하기 좋게, 약간 오른쪽 */
     #joystick-area {
-      position: absolute; bottom: max(28px, env(safe-area-inset-bottom)); left: max(36px, env(safe-area-inset-left) + 16px);
+      position: absolute; bottom: max(42px, calc(env(safe-area-inset-bottom) + 14px)); left: max(36px, env(safe-area-inset-left) + 16px);
       width: min(160px, 32vmin); height: min(160px, 32vmin);
       pointer-events: all;
     }
@@ -1407,7 +1407,7 @@
 
     /* 우측 버튼들 — 최소 44px 터치 영역 */
     #right-buttons {
-      position: absolute; bottom: max(28px, env(safe-area-inset-bottom)); right: max(20px, env(safe-area-inset-right));
+      position: absolute; bottom: max(42px, calc(env(safe-area-inset-bottom) + 14px)); right: max(20px, env(safe-area-inset-right));
       display: flex; flex-direction: column; gap: 10px; align-items: flex-end;
       pointer-events: all;
     }
@@ -1541,8 +1541,8 @@
       .shop-grid { grid-template-columns: 1fr; gap: 8px; }
 
       /* 모바일 컨트롤 — 조금 오른쪽, 더 크게 */
-      #joystick-area { width: 132px; height: 132px; bottom: max(18px, env(safe-area-inset-bottom)); left: max(28px, env(safe-area-inset-left) + 12px); }
-      #right-buttons { bottom: max(18px, env(safe-area-inset-bottom)); right: max(10px, env(safe-area-inset-right)); gap: 6px; }
+      #joystick-area { width: 132px; height: 132px; bottom: max(48px, calc(env(safe-area-inset-bottom) + 30px)); left: max(28px, env(safe-area-inset-left) + 12px); }
+      #right-buttons { bottom: max(48px, calc(env(safe-area-inset-bottom) + 30px)); right: max(10px, env(safe-area-inset-right)); gap: 6px; }
       #right-buttons-row1, #right-buttons-row2 { gap: 6px; }
       #btn-jump { width: 56px; height: 56px; font-size: 18px; }
       #btn-dash { width: 46px; height: 46px; font-size: 15px; }
