@@ -805,6 +805,19 @@
       pointer-events: none;
     }
 
+    /* 가끔 나오는 작은 광고 자리 (게임 오버 시에만 표시) */
+    #ad-slot {
+      margin-top: auto;
+      padding-top: 20px;
+      min-height: 50px;
+      width: 100%;
+      max-width: 320px;
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+    #ad-slot.show { display: flex; }
+
     .ov-hero {
       text-align: center;
       margin-bottom: 40px;
@@ -1667,6 +1680,8 @@
       <div><strong>Z/X/C</strong> 아이템 사용</div>
       <div class="ctrl-wide">🔫 5000m마다 보스전! 총으로 처치하라</div>
     </div>
+    <!-- 작은 광고: 게임 오버 시에만 표시. AdSense 승인 후 이 안에 광고 코드 붙여넣기 -->
+    <div id="ad-slot"></div>
   </div>
 
   <!-- 인벤토리 HUD -->
@@ -3206,6 +3221,7 @@
       document.getElementById('ov-best').style.display='';
       document.getElementById('ov-best').textContent='최고 기록: '+bestScore+'m';
       document.getElementById('start-btn').textContent='다시 도전';
+      document.getElementById('ad-slot').classList.add('show');
     }
 
     function updateBestDisplay() { document.getElementById('best-display').textContent='🏆 최고: '+bestScore+'m'; }
@@ -3238,7 +3254,7 @@
       player.vy+=grav*scale;player.x+=player.vx*scale;player.y+=player.vy*scale;
       if(player.invFrames>0)player.invFrames-=scale;
       if(player.x+player.w<0)player.x=canvas.width;if(player.x>canvas.width)player.x=-player.w;
-      if(!bossMode)player.hp=Math.min(maxPlayerHp(),player.hp+(score>=10000?0.016:score>=5000?0.025:score>=2000?0.028:score>=1000?0.042:score>=500?0.068:0.095)*scale);
+      if(!bossMode){const baseHpRegen=(score>=10000?0.016:score>=5000?0.025:score>=2000?0.028:score>=1000?0.042:score>=500?0.068:0.095)*scale;const hpLv=upgrades.hp||0;const regenMult=1+hpLv*0.5;player.hp=Math.min(maxPlayerHp(),player.hp+baseHpRegen*regenMult);}
       player.history=[];
       blocks=blocks.filter(b=>{
         if(player.x<b.x+b.w&&player.x+player.w>b.x&&player.y+player.h>b.y&&player.y+player.h<b.y+b.h+14&&player.vy>=0){player.y=b.y-player.h;player.vy=0;player.jumpCount=0;}
