@@ -76,14 +76,16 @@
       gap: min(8px, 1vh);
     }
 
-    /* 높이 숫자(숫자 + m) — 화면 정중앙 (요소 너비만큼만 잡고 50%에서 반만큼 왼쪽으로) */
+    /* 높이 숫자(숫자 + m) — PC/모바일 공통 화면 정중앙 */
     #height-display {
       position: fixed;
       top: min(18px, 2.2vh);
-      left: 50%;
-      transform: translateX(-50%);
-      width: fit-content;
-      max-width: 90vw;
+      left: 0;
+      right: 0;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      text-align: center;
       font-family: 'Black Han Sans', sans-serif;
       font-size: clamp(52px, 6.2vh, 88px);
       line-height: 1;
@@ -97,6 +99,7 @@
       white-space: nowrap;
       pointer-events: none;
       z-index: 21;
+      box-sizing: border-box;
     }
     @keyframes heightPulse {
       0%, 100% { filter: drop-shadow(0 0 20px rgba(100,200,255,0.8)) drop-shadow(0 2px 4px rgba(0,0,0,0.8)); }
